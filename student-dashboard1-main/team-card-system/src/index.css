@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #0F172A;
+  background: #F8FAFC;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #F8FAFC; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.student-id-card { width: 340px; max-width: calc(100vw - 32px); aspect-ratio: 0.64; border-radius: 18px; background: white; box-shadow: 0 18px 35px rgba(15,23,42,.16); overflow: hidden; border: 1px solid #E2E8F0; }
+.id-side { height: 100%; background: white; }
+.id-header { height: 82px; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: #2563EB; color: white; }
+.college-mark { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; }
+.college-name { margin: 0; font-size: 13px; font-weight: 700; line-height: 1.25; }
+.college-location { margin: 3px 0 0; font-size: 9px; opacity: .85; }
+.id-body { height: calc(100% - 82px); padding: 22px 22px 18px; text-align: center; }
+.id-photo { width: 128px; height: 128px; border-radius: 50%; object-fit: cover; border: 5px solid #EFF6FF; outline: 1px solid #BFDBFE; margin: 0 auto; }
+.id-body h3 { margin: 10px 0 3px; font-size: 18px; line-height: 1.2; }
+.id-status { margin: 0; display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #64748B; }
+.id-status span { width: 6px; height: 6px; border-radius: 50%; background: #16A34A; }
+.id-details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; text-align: left; }
+.id-details div:last-child { grid-column: 1 / -1; }
+.id-details div { border-bottom: 1px solid #E2E8F0; padding-bottom: 7px; }
+.id-details span, .id-back-grid span { display: block; font-size: 8px; color: #64748B; text-transform: uppercase; letter-spacing: .04em; }
+.id-details strong, .id-back-grid strong { display: block; margin-top: 3px; font-size: 11px; color: #0F172A; }
+.id-footer { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 16px; }
+.signature { text-align: left; min-width: 115px; }
+.signature span { display: block; color: #1E40AF; font-family: cursive; font-size: 14px; border-bottom: 1px solid #CBD5E1; }
+.signature small, .id-back-sign small { display: block; margin-top: 3px; font-size: 8px; color: #64748B; }
+.id-back-body { height: calc(100% - 82px); padding: 24px 22px; }
+.id-address { margin: 0 0 5px; font-size: 10px; line-height: 1.5; color: #475569; }
+.id-back-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 24px; }
+.id-back-grid div { min-height: 56px; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; }
+.id-terms { margin-top: 22px; border-top: 1px solid #E2E8F0; padding-top: 16px; }
+.id-terms strong { font-size: 11px; }
+.id-terms p { margin: 6px 0 0; font-size: 9px; line-height: 1.55; color: #64748B; }
+.id-back-sign { width: 120px; margin: 26px 0 0 auto; text-align: center; }
+.id-back-sign span { display: block; border-bottom: 1px solid #94A3B8; height: 25px; color: #1E40AF; font-family: cursive; }
+.id-control { display: flex; width: 100%; align-items: center; gap: 12px; border: 1px solid #E2E8F0; border-radius: 10px; padding: 10px 12px; color: #2563EB; text-align: left; }
+.id-control:hover { background: #F8FAFC; }
+.id-control span { display: flex; flex-direction: column; }
+.id-control strong { font-size: 13px; color: #0F172A; }
+.id-control small { margin-top: 2px; font-size: 10px; color: #64748B; }
+@media (max-width: 420px) { .student-id-card { width: 320px; } .id-photo { width: 118px; height: 118px; } }
+@media print {
+  body * { visibility: hidden !important; }
+  .print-card, .print-card * { visibility: visible !important; }
+  .print-card { position: fixed; left: 50%; top: 24px; transform: translateX(-50%); }
+  .student-id-card { box-shadow: none; print-color-adjust: exact; }
+  @page { size: portrait; margin: 12mm; }
+}
